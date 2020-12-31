@@ -1,4 +1,4 @@
-import './styles/staccato/Global.scss';
+import "./index.css"
 
 import Carousel from './components/Carousel';
 import TitleText from './components/TitleText';

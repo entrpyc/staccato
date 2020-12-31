@@ -1,5 +1,3 @@
-import './Default.scss';
-
 function TitleText(props) {
   const { title, text, orientation, subTitle } = props
   const bgImage = `url(${props.bgImage})`;

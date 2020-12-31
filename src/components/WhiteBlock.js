@@ -1,7 +1,5 @@
 import React from 'react'
 
-import "./Default.scss"
-
 export default function WhiteBlock() {
   return (
     <section className="white-block">

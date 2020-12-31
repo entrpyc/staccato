@@ -279,7 +279,7 @@ section,
 
 // this is used to give margin between separated elements on smaller devices
 @mixin pad-last($selector) {
-  &.pad-last {
+  .pad-last {
     & > *:last-child {
       margin-left: $margin-1;
     }
