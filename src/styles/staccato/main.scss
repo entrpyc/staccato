@@ -1,0 +1,10 @@
+// Type:Configuration
+@import "./config/main"; // { priority: 0 }
+@import "./global/load"; // { priority: 0 }
+
+// Type:Layer
+@import "./notes/load";  // { priority: 0 }
+
+
+// Type:Component
+@import "./components/load";  // { priority: 0 }
