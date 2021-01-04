@@ -1,248 +1,253 @@
-.carousel {
-  .slide-bg {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(#003632, 0.6);
+@use "../config/main.scss" as *;
+@use "../config/colors.scss" as *;
 
-      z-index: 1;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      right: 0;
-      bottom: 0;
-      left: 50%;
-      background-color: $white;
-
-      z-index: 3;
-    }
-
-    .bg-image {
-      background-size: cover;
-      background-position: 70% center;
-      position: relative;
-  
-      &.slide-1 {
-        background-image: url('https://rgconsult.net/img/first.jpg');
-      }
-      &.slide-2 {
-        background-image: url('https://rgconsult.net/img/second.jpg');
-      }
-      &.slide-3 {
-        background-image: url('https://rgconsult.net/img/third.jpg');
-      }
-    }
-    
-    .text-box {
-      background-color: rgba($white, 1);
-      z-index: 2;
-      position: relative;
-
-      .text {
-        // margin-top: $margin-2;
-        position: relative;
-        max-width: 600px;
-        
-        p, li, span {
-          opacity: 0;
-          transition: 1s ease-in-out;
-          color: $gray;
-          font-size: $size-4;
-
-          &.present {
-            position: relative;
-            padding: 0 20px;
-          
-            &::before {
-              content: '';
-              position: absolute;
-              left: 0;
-              height: 100%;
-              width: 1px;
-              background-color: $cyan;
-            }
-          }
-        }
-
-        p {
-          line-height: $height-big;
-        }
-
-        ul {
-          margin-left: -#{$margin-1};
-          margin-right: -#{$margin-1};
-
-          li {
-            width: #{'max(170px, calc(33.333% - 20px))'};
-            margin: #{$margin-1};
-            padding: $padding-li;
-            background-color: rgba($black, 0.03);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.06);
-
-            &::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              width: 6px;
-              background-color: $cyan;
-            }
-          }
-        }
-
-        // &::before {
-        //   content: '';
-        //   position: absolute;
-        //   width: 1px;
-        //   height: 100%;
-        //   left: -50px;
-        //   background-color: $cyan;
-        // }
-      }
-
-      &::after {
+@mixin carousel {
+  .carousel {
+    .slide-bg {
+      &::before {
         content: '';
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
-        left: 100%;
-        background-color: $white;
-      }
-    }
-
-    h1, p {
-      max-width: 600px;
-    }
-
-    h1 {
-      text-align: center;
-      color: $white;
-      z-index: 2;
-      transform: translateY(30px);
-      opacity: 0;
-    }
-  }
-  .slick-track {
-    display: flex;
-    align-items: stretch;
-
-    .slick-slide {
-      height: auto;
-    }
-
-    .slick-slide > div,
-    .slide-bg,
-    .container-split {
-      height: 100%;
-    }
-  }
-  .slick-slide {
-    &.slick-active {
-      .slide-bg {
-        &::after {
-          animation: rollSlide 1.1s ease-in-out forwards 1;
-        }
-      }
-      .text-box {
-        &::after {
-          animation: paperSlide 1.1s 200ms ease-in-out forwards 1;
-        }
-      }
-      .slide-bg .text-box {
-        p, li, span {
-          opacity: 1;
-          $delayIncrement: 60;
+        left: 0;
+        background-color: rgba(#003632, 0.6);
   
-          // @for $i from 0 through 5 {
-          //   &.d-#{$i} {
-          //     animation: textEnter 0.5s #{$delayIncrement * $i}ms ease-in forwards 1;
-          //   }
+        z-index: 1;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        right: 0;
+        bottom: 0;
+        left: 50%;
+        background-color: $white;
+  
+        z-index: 3;
+      }
+  
+      .bg-image {
+        background-size: cover;
+        background-position: 70% center;
+        position: relative;
+    
+        &.slide-1 {
+          background-image: url('https://rgconsult.net/img/first.jpg');
+        }
+        &.slide-2 {
+          background-image: url('https://rgconsult.net/img/second.jpg');
+        }
+        &.slide-3 {
+          background-image: url('https://rgconsult.net/img/third.jpg');
+        }
+      }
+      
+      .text-box {
+        background-color: rgba($white, 1);
+        z-index: 2;
+        position: relative;
+  
+        .text {
+          // margin-top: $margin-2;
+          position: relative;
+          max-width: 600px;
+          
+          p, li, span {
+            opacity: 0;
+            transition: 1s ease-in-out;
+            color: $gray;
+            font-size: $size-4;
+  
+            &.present {
+              position: relative;
+              padding: 0 20px;
+            
+              &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                height: 100%;
+                width: 1px;
+                background-color: $cyan;
+              }
+            }
+          }
+  
+          p {
+            line-height: $height-big;
+          }
+  
+          ul {
+            margin-left: -#{$margin-1};
+            margin-right: -#{$margin-1};
+  
+            li {
+              width: #{'max(170px, calc(33.333% - 20px))'};
+              margin: #{$margin-1};
+              padding: $padding-li;
+              background-color: rgba($black, 0.03);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              position: relative;
+              box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.06);
+  
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 6px;
+                background-color: $cyan;
+              }
+            }
+          }
+  
+          // &::before {
+          //   content: '';
+          //   position: absolute;
+          //   width: 1px;
+          //   height: 100%;
+          //   left: -50px;
+          //   background-color: $cyan;
           // }
         }
+  
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 100%;
+          background-color: $white;
+        }
       }
+  
+      h1, p {
+        max-width: 600px;
+      }
+  
       h1 {
-        animation: headerIn 1s ease-in-out forwards 1;
+        text-align: center;
+        color: $white;
+        z-index: 2;
+        transform: translateY(30px);
+        opacity: 0;
       }
     }
-  }
-  .slick-dots {
-    bottom: 30px;
-    width: 50%;
-
-    li {
-      margin: 0 10px;
-
-      button {
-        height: 5px;
-
-        &::before {
-          content: '';
-          background-color: $white;
-          border: none;
-          height: 5px;
+    .slick-track {
+      display: flex;
+      align-items: stretch;
+  
+      .slick-slide {
+        height: auto;
+      }
+  
+      .slick-slide > div,
+      .slide-bg,
+      .container-split {
+        height: 100%;
+      }
+    }
+    .slick-slide {
+      &.slick-active {
+        .slide-bg {
+          &::after {
+            animation: rollSlide 1.1s ease-in-out forwards 1;
+          }
+        }
+        .text-box {
+          &::after {
+            animation: paperSlide 1.1s 200ms ease-in-out forwards 1;
+          }
+        }
+        .slide-bg .text-box {
+          p, li, span {
+            opacity: 1;
+            $delayIncrement: 60;
+    
+            // @for $i from 0 through 5 {
+            //   &.d-#{$i} {
+            //     animation: textEnter 0.5s #{$delayIncrement * $i}ms ease-in forwards 1;
+            //   }
+            // }
+          }
+        }
+        h1 {
+          animation: headerIn 1s ease-in-out forwards 1;
         }
       }
     }
+    .slick-dots {
+      bottom: 30px;
+      width: 50%;
+  
+      li {
+        margin: 0 10px;
+  
+        button {
+          height: 5px;
+  
+          &::before {
+            content: '';
+            background-color: $white;
+            border: none;
+            height: 5px;
+          }
+        }
+      }
+    }
+  
+    .bottom-ribbon {
+      padding-top: $padding-sections-small;
+      padding-bottom: $padding-sections-small;
+      background-color: $gray;
+  
+      h2, p, a {
+        text-align: center;
+      }
+  
+      h2 {
+        color: $cyan;
+        font-weight: $weight-5  ;
+      }
+  
+      p, strong, a {
+        color: $white;
+      }
+  
+      a {
+        text-decoration: none;
+        border: 1px solid $white;
+        border-radius: 25px;
+        padding: 10px 35px;
+      }
+    }
   }
-
-  .bottom-ribbon {
-    padding-top: $padding-sections-small;
-    padding-bottom: $padding-sections-small;
-    background-color: $gray;
-
-    h2, p, a {
-      text-align: center;
-    }
-
-    h2 {
-      color: $cyan;
-      font-weight: $weight-5  ;
-    }
-
-    p, strong, a {
-      color: $white;
-    }
-
-    a {
-      text-decoration: none;
-      border: 1px solid $white;
-      border-radius: 25px;
-      padding: 10px 35px;
-    }
+  
+  @keyframes textEnter {
+    from {transform: translateX(-30px);opacity: 0;}
+    to {transform: translateX(0); opacity: 1;}
   }
-}
-
-@keyframes textEnter {
-  from {transform: translateX(-30px);opacity: 0;}
-  to {transform: translateX(0); opacity: 1;}
-}
-
-@keyframes paperSlide {
-  0% {right: 100%;left: 0;background-color: $green;}
-  50% {right: 0;left: 0;background-color: $white;}
-  100% {right: 0;left: 100%;background-color: $green;}
-}
-
-@keyframes rollSlide {
-  0% {top: 100%;bottom: 0;background-color: $white;}
-  50% {top: 0;bottom: 0;background-color: $green;}
-  100% {top: 0;bottom: 100%;background-color: $white;}
-}
-
-@keyframes headerIn {
-  0% {transform: translateY(30px);opacity: 0;}
-  100% {transform: translateY(0);opacity: 1;}
+  
+  @keyframes paperSlide {
+    0% {right: 100%;left: 0;background-color: $green;}
+    50% {right: 0;left: 0;background-color: $white;}
+    100% {right: 0;left: 100%;background-color: $green;}
+  }
+  
+  @keyframes rollSlide {
+    0% {top: 100%;bottom: 0;background-color: $white;}
+    50% {top: 0;bottom: 0;background-color: $green;}
+    100% {top: 0;bottom: 100%;background-color: $white;}
+  }
+  
+  @keyframes headerIn {
+    0% {transform: translateY(30px);opacity: 0;}
+    100% {transform: translateY(0);opacity: 1;}
+  }
 }

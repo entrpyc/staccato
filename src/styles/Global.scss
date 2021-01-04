@@ -1,0 +1,145 @@
+@import "./Reset.scss";
+@import "./FlexGrid.scss";
+
+html {
+  font-size: 16px;
+}
+
+* {
+  font-family: $font-primary;
+  line-height: $height-1;
+  font-weight: $weight-3;
+  font-size: $size-3;
+  color: $black;
+  text-rendering: optimizeLegibility;
+
+  &.white {
+    color: $white;
+  }
+  &.green {
+    color: $green;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  color: $color-title;
+}
+
+h1:not(.def) {
+  font-size: $size-5;
+  font-weight: $weight-5;
+}
+
+h2:not(.def) {
+  font-size: $size-title;
+  font-weight: $weight-4;
+}
+
+h3:not(.def) {
+  font-size: $size-3;
+  font-weight: $weight-4;
+}
+
+p, li, a, span {
+  font-weight: $weight-3;
+  font-size: $size-3;
+  line-height: $height-text;
+
+  &.small {
+    font-size: $size-3;
+  }
+
+  .underlined {
+    border-bottom: 1px solid rgba($cyan, 0.6);
+    font-weight: $weight-4;
+  }
+}
+
+ul {
+  &.special {
+    list-style: none;
+    padding-inline-start: 0;
+  
+    li {
+      padding-left: 20px;
+      position: relative;
+  
+      &::before {
+        content: '';
+        flex-shrink: 0;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $cyan;
+        display: inline-block;
+        position: absolute;
+        top: 0.5em;
+        left: 0px;
+      }
+  
+      & + li {
+        margin-top: 6px;
+      }
+    }
+  
+    &.green {
+      li::before {
+        background-color: $green;
+      }
+    }
+    &.red {
+      li::before {
+        background-color: $red;
+      }
+    }
+  }
+  &.no-bullets {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+  &.underline {
+    li {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: $padding-li;
+        right: $padding-li;
+        height: 2px;
+        background-color: $cyan;
+      }
+    }
+  }
+  &.expand {
+    li + li {
+      margin-top: $margin-1;
+    }
+  }
+}
+
+.red {
+  color: $red;
+}
+
+.line-below {
+  position: relative;
+  padding-bottom: $padding-text;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background-color: $green;
+    left: 10%;
+    right: 10%;
+  }
+}
+
+strong:not(.seo) {
+  font-weight: $weight-5;
+}
