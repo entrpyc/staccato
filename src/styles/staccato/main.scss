@@ -1,15 +1,12 @@
 // Type:Configuration
 // @use "./config/main"; // { priority: 0 }
-@use "./global/load" as global; // { priority: 0 }
+@use "./global/mount" as global; // { priority: 0 }
 
 // Type:Layer
-@use "./notes/load" as flex;  // { priority: 0 }
+@use "./notes/mount" as flex;  // { priority: 0 }
 
 // Type:Component
-@use "./components/load" as components;  // { priority: 0 }
-
-
-@import "./config/main"; // { priority: 0 }
+@use "./components/mount" as components;  // { priority: 0 }
 
 
 @include global.export;
