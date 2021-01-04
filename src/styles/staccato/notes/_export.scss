@@ -1,0 +1,6 @@
+@use "./FlexGrid.scss";
+
+@mixin export {
+  @include FlexGrid.mount;
+
+}

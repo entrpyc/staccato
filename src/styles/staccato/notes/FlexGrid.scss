@@ -341,7 +341,7 @@ img {
 // DRAW GRID
 // ----------------------------------------------------------------
 
-@mixin export {
+@mixin mount {
   @include flex;
   @include d-none($load-default);
   @include width($load-default);

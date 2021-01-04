@@ -1,7 +1,7 @@
 @use "../config/main.scss" as *;
 @use "../config/colors.scss" as *;
 
-@mixin export {
+@mixin mount {
   html {
     font-size: 16px;
   }
