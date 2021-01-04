@@ -1,0 +1,92 @@
+@import "./Colors.scss";
+
+// ----- grid -----
+$container: 1080px;
+$container-padding: 20px;
+$container-high-end: 70%;
+
+$sidebar-width: 0;
+$content-full: 100%;
+
+// ----- breakpoints -----
+$screen-high-end: 1920px;
+$screen-desktop: 1440px;
+$screen-tablet: 1024px;
+$screen-mobile: 768px;
+$screen-mini: 320px;
+
+// ----- breakpoints for grid drawer -----
+$gd-breakpoints: (
+  "-high-end": $screen-high-end,
+  "-desktop": $screen-desktop,
+  "-tablet": $screen-tablet,
+  "-mobile": $screen-mobile,
+  "-mini": $screen-mini,
+);
+
+// ----- padding -----
+$padding-1: 10px;
+$padding-li: 15px;
+$padding-sections: 130px;
+$padding-sections-small: 50px;
+$padding-text: 35px;
+
+// ----- margin -----
+$margin-1: 10px;
+$margin-2: 50px;
+$margin-text: 15px;
+$margin-gap: 20px;
+$margin-gap-big: 35px;
+$margin-gap-xl: 50px;
+
+// ----- font-size -----
+$size-1: 12px;
+$size-2: 16px;
+$size-3: 20px;
+$size-4: 24px;
+$size-title: 34px;
+$size-5: 80px;
+
+// ----- line-height -----
+$height-1: 1.1;
+$height-text: 1.3;
+$height-big: 1.4;
+
+// ----- letter-spacing -----
+$spacing-1: 1;
+
+// ----- font-family -----
+$font-primary: 'Open Sans', sans-serif;
+$font-secondary: 'Playfair Display', serif;
+
+// ----- font color -----
+// $color-primary: $gray-1;
+// $color-secondary: $seagreen;
+// $color-hover: $secondary-color;
+
+// ----- font weight -----
+
+$weight-3: 300;
+$weight-4: 400;
+$weight-5: 500;
+$weight-6: 600;
+$weight-7: 700;
+
+// ----- theme colors -----
+$color-title: $green;
+
+// ----- background -----
+$background-primary: $white;
+$background-secondary: $crayola;
+
+// ----- borders -----
+$border-section-middle: 1px solid $green;
+$border-section-middle-rtl: 1px solid $white;
+// $border-2: 1px dashed rgba(#22144F, 0.05);
+
+
+// ----- transitions -----
+$ease-flash: 0.15s all ease-in-out;
+$ease-quick: 0.2s all ease-in-out;
+$ease-quick-d: 0.2s 50ms all ease-in-out;
+$ease-slow: 0.35s all ease-in-out;

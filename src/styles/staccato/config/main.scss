@@ -1,4 +1,4 @@
-@import "../notes/Colors.scss";
+@use "./colors" as *;
 
 // ----- grid -----
 $container: 1080px;
@@ -90,3 +90,5 @@ $ease-flash: 0.15s all ease-in-out;
 $ease-quick: 0.2s all ease-in-out;
 $ease-quick-d: 0.2s 50ms all ease-in-out;
 $ease-slow: 0.35s all ease-in-out;
+
+$test: #000;
