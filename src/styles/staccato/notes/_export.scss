@@ -5,6 +5,8 @@
 @use "./FlexContainer";
 @use "./Helper";
 
+@forward '../config/main';
+
 $init: '';
 
 @mixin export {

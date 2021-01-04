@@ -1,6 +1,8 @@
 @use "./Carousel";
 @use "./Default";
 
+@forward '../config/main';
+
 @mixin export {
   @include Carousel.mount;
   @include Default.mount;

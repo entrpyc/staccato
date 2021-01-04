@@ -1,4 +1,5 @@
 @use "./colors" as *;
+@forward './colors';
 
 // ----- grid -----
 $container: 1080px;

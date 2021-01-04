@@ -1,6 +1,8 @@
 @use "./Reset";
 @use "./Global";
 
+@forward '../config/main';
+
 @mixin export {
   @include Reset.mount;
   @include Global.mount;
