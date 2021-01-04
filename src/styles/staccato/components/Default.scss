@@ -1,7 +1,7 @@
 @use "../config/main.scss" as *;
 @use "../config/colors.scss" as *;
 
-@mixin default {
+@mixin mount {
   section.title-text,
   section.white-block {
     background-repeat: no-repeat;

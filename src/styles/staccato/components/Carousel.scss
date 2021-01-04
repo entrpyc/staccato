@@ -1,7 +1,7 @@
 @use "../config/main.scss" as *;
 @use "../config/colors.scss" as *;
 
-@mixin carousel {
+@mixin mount {
   .carousel {
     .slide-bg {
       &::before {

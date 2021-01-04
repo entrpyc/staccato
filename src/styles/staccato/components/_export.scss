@@ -1,10 +1,7 @@
 @use "./Carousel";
 @use "./Default";
 
-
-@use "./FlexGrid.scss";
-
 @mixin export {
-  @include FlexGrid.mount;
-
+  @include Carousel.mount;
+  @include Default.mount;
 }
