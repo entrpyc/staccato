@@ -1,3 +1,5 @@
+@use "../config/main.scss" as *;
+
 $gd-breakpoints: (
   "-high-end": $screen-high-end,
   "-desktop": $screen-desktop,
