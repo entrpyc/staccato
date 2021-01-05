@@ -1,4 +1,10 @@
 @mixin mount($selector) {
+  @if $selector == '' {
+    .flex {
+      display: flex;
+    }
+  }
+  
   .flex {
     &.inline#{$selector} {
       display: inline-flex;

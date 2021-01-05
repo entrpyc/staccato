@@ -21,8 +21,8 @@
 
   .col-grid {
     .side-padding#{$selector} {
-      padding-left: $padding-1;
-      padding-right: $padding-1;
+      padding-left: $padding-side;
+      padding-right: $padding-side;
     }
     .col-1#{$selector} {
       flex: 0 0 100%;
