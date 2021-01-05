@@ -45,12 +45,22 @@
     &.jc-stretch#{$selector} {
       justify-content: stretch;
     }
+    &.exist#{$selector} {
+      flex: 1;
+    }
+    &.center#{$selector} {
+      align-items: center;
+      justify-content: center;
+    }
+    &.split#{$selector} {
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }
 
 $staccato_object: (
   compatible: (
     'extender',
-    'other_note',
   ),
 )
