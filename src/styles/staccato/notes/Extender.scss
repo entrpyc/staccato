@@ -10,7 +10,6 @@
     $selector: '-#{$unformated_selector}';
     
     @media screen and(max-width: $break-point) {
-
       @include ColGrid.mount(#{$selector});
       @include FlexBox.mount(#{$selector});
       @include Helper.gap(#{$selector});    

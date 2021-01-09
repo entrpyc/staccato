@@ -1,4 +1,4 @@
-@use "../config/main" as *;
+@use "../config/grid" as *;
 
 @mixin mount($selector) {
   @if $selector == '' {
@@ -7,22 +7,22 @@
       .sidebar {
         flex: 0 0 $sidebar-width;
         max-width: $sidebar-width;
-        padding-left: $padding-1;
-        padding-right: $padding-1;
+        padding-left: $sidebar-padding;
+        padding-right: $sidebar-padding;
       }
       .content {
         flex: 0 0 calc(100% - #{$sidebar-width});
         max-width: calc(100% - #{$sidebar-width});
-        padding-left: $padding-1;
-        padding-right: $padding-1;
+        padding-left: $container-padding;
+        padding-right: $container-padding;
       }
     }
   }
 
   .col-grid {
     .side-padding#{$selector} {
-      padding-left: $padding-side;
-      padding-right: $padding-side;
+      padding-left: $col-padding;
+      padding-right: $col-padding;
     }
     .col-1#{$selector} {
       flex: 0 0 100%;

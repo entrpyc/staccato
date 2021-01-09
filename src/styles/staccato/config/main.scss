@@ -1,13 +1,7 @@
 @use "./colors" as *;
+
 @forward './colors';
-
-// ----- grid -----
-$container: 1080px;
-$container-padding: 20px;
-$container-high-end: 70%;
-
-$sidebar-width: 0;
-$content-full: 100%;
+@forward './grid';
 
 // ----- breakpoints -----
 $screen-high-end: 1920px;
