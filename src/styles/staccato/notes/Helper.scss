@@ -6,6 +6,30 @@
   @include max-width($selector);
   @include d-none($selector);
   @include sep($selector);
+  @include z-index($selector);
+  @include position($selector);
+}
+
+@mixin position($selector) {
+  .absolute#{$selector} {
+    position: absolute;
+  }
+
+  .relative#{$selector} {
+    position: relative;
+  }
+
+  .static#{$selector} {
+    position: static;
+  }
+
+  .fixed#{$selector} {
+    position: fixed;
+  }
+
+  .sticky#{$selector} {
+    position: sticky;
+  }
 }
 
 @mixin gap($selector) {
@@ -26,40 +50,40 @@
 }
 
 @mixin z-index($selector) {
-  .z-0 {
+  .z-0#{$selector} {
     z-index: 0;
   }
-  .z-10 {
+  .z-10#{$selector} {
     z-index: 10;
   }
-  .z-20 {
+  .z-20#{$selector} {
     z-index: 20;
   }
-  .z-30 {
+  .z-30#{$selector} {
     z-index: 30;
   }
-  .z-40 {
+  .z-40#{$selector} {
     z-index: 40;
   }
-  .z-50 {
+  .z-50#{$selector} {
     z-index: 50;
   }
-  .z-60 {
+  .z-60#{$selector} {
     z-index: 60;
   }
-  .z-70 {
+  .z-70#{$selector} {
     z-index: 70;
   }
-  .z-80 {
+  .z-80#{$selector} {
     z-index: 80;
   }
-  .z-90 {
+  .z-90#{$selector} {
     z-index: 90;
   }
-  .z-100 {
+  .z-100#{$selector} {
     z-index: 100;
   }
-  .z-auto {
+  .z-auto#{$selector} {
     z-index: auto;
   }
 }
