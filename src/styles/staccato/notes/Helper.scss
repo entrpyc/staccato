@@ -13,7 +13,7 @@
     margin-top: $margin-gap;    
   }
   .gap-small#{$selector} {
-    margin-top: $margin-1;
+    margin-top: $margin-gap-small;
   }
 
   .gap-large#{$selector} {
@@ -91,7 +91,7 @@
   .sep {
     & > *:last-child,
     & > * + * {
-      margin-left: $margin-1;
+      margin-left: $margin-sep;
     }
   }
 }
