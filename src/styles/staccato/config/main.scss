@@ -1,12 +1,7 @@
 @use "./colors" as *;
 
-// ----- grid -----
-$container: 1080px;
-$container-padding: 20px;
-$container-high-end: 70%;
-
-$sidebar-width: 0;
-$content-full: 100%;
+@forward './colors';
+@forward './grid';
 
 // ----- breakpoints -----
 $screen-high-end: 1920px;
@@ -15,16 +10,8 @@ $screen-tablet: 1024px;
 $screen-mobile: 768px;
 $screen-mini: 320px;
 
-// ----- breakpoints for grid drawer -----
-$gd-breakpoints: (
-  "-high-end": $screen-high-end,
-  "-desktop": $screen-desktop,
-  "-tablet": $screen-tablet,
-  "-mobile": $screen-mobile,
-  "-mini": $screen-mini,
-);
-
 // ----- padding -----
+$padding-side: 10px;
 $padding-1: 10px;
 $padding-li: 15px;
 $padding-sections: 130px;
@@ -90,5 +77,3 @@ $ease-flash: 0.15s all ease-in-out;
 $ease-quick: 0.2s all ease-in-out;
 $ease-quick-d: 0.2s 50ms all ease-in-out;
 $ease-slow: 0.35s all ease-in-out;
-
-$test: #000;

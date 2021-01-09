@@ -1,0 +1,40 @@
+@mixin mount {
+  .relative {
+    position: relative;
+  }
+
+  .image,
+  img {
+    &.auto {
+      height: auto;
+
+      img {
+        height: auto;
+      }
+    }
+    &.full {
+      max-width: 100%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .ls-none {
+    list-style: none;
+  }
+
+  .td-none,
+  .td-none a {
+    text-decoration: none;
+  }
+
+  .ta-center {
+    text-align: center;
+  }
+
+  .i {
+    font-style: italic;
+  }
+}

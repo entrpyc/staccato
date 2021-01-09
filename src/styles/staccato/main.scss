@@ -1,15 +1,12 @@
+@use "./global/export" as UserConfigurations; // { priority: 0 }
+@use "./notes/export" as UserLayers;  // { priority: 0 }
+@use "./components/export" as UserComponents;  // { priority: 0 }
+
 // Type:Configuration
-// @use "./config/main"; // { priority: 0 }
-@use "./global/mount" as global; // { priority: 0 }
+@include UserConfigurations.export;
 
 // Type:Layer
-@use "./notes/mount" as flex;  // { priority: 0 }
+@include UserLayers.export;
 
 // Type:Component
-@use "./components/mount" as components;  // { priority: 0 }
-
-
-@include global.export;
-@include flex.export;
-@include components.default;
-@include components.carousel;
+@include UserComponents.export;
