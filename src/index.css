@@ -1,3 +1,6 @@
+/**
+* DOCS: https://github.com/Simonwep/sassyfication#min-sizewidth-auto-height-width
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -562,27 +565,6 @@ section.secondary,
   margin-right: -20px;
 }
 
-.relative {
-  position: relative;
-}
-
-.image.auto,
-img.auto {
-  height: auto;
-}
-.image.auto img,
-img.auto img {
-  height: auto;
-}
-.image.full,
-img.full {
-  max-width: 100%;
-}
-.image.full img,
-img.full img {
-  max-width: 100%;
-}
-
 .ls-none {
   list-style: none;
 }
@@ -884,6 +866,10 @@ img.full img {
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+.radius {
+  border-radius: 0;
 }
 
 .cursor-pointer {

@@ -1,6 +1,0 @@
-@use "./main";
-
-$mq-phones: #{main.$screen-mobile};
-$mq-tablets: #{main.$screen-tablet};
-$mq-desktop: #{main.$screen-high-end};
-$mq-large-desktop: #{main.$screen-high-end};

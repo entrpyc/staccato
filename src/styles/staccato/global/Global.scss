@@ -1,4 +1,5 @@
 @use "../config/main" as *;
+@use "../functions/functions" as *;
 
 @mixin mount {
   html {

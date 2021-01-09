@@ -1,0 +1,67 @@
+@use "./Helpers" as *;
+
+$before: 'before';
+$after: 'after';
+
+$hover: 'hover';
+$active: 'active';
+$focus: 'focus';
+$visited: 'visited';
+
+@mixin pseudo($type) {
+  &::#{$type} {
+    content: '';
+    position: absolute;
+    
+    @content;
+  }
+}
+
+@mixin pseudo-cover($type) {
+  &::#{$type} {
+    content: '';
+    position: absolute;
+
+    @include cover;
+    
+    @content;
+  }
+}
+
+@mixin pseudo-propagate($type, $attr) {
+  $data-attr: 'data-#{$attr}';
+
+  &[#{$data-attr}]::#{$type} {
+    content: attr(#{$data-attr});
+    position: absolute;
+    
+    @content;
+  }
+}
+
+@mixin bg-img($image) {
+  background-image: url(#{$image});
+}
+
+@mixin cover {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin propagate($attr, $prop) {
+  $data-attr: 'data-#{$attr}';
+
+  &[#{data-attr}] {
+    #{prop}: attr(#{$data-attr});
+    @content;
+  }
+}
+
+@mixin selector($type) {
+  &:#{$type} {
+    // the editor does not like this very much
+    @content;
+  }
+}

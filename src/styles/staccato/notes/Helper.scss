@@ -10,8 +10,15 @@
   @include position($selector);
   @include pointer-events($selector);
   @include screen-reader($selector);
+  @include radius($selector);
   @include cursor;
   @include image;
+}
+
+@mixin radius($selector) {
+  .radius {
+    border-radius: $radius;
+  }
 }
 
 @mixin image {

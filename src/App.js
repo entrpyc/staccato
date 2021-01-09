@@ -11,7 +11,7 @@ import "./index.css"
 
 function App() {
   return (
-    <div className="main">
+    <div className="main relative">
       <Header />
       <Router>
           <Switch>
