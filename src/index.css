@@ -547,12 +547,12 @@ section,
 .section {
   background-color: #fff;
 }
-section:not(.reduce-top),
-.section:not(.reduce-top) {
+section:not(.reduce-top):not(.reduce),
+.section:not(.reduce-top):not(.reduce) {
   padding-top: 30px;
 }
-section:not(.reduce-bottom),
-.section:not(.reduce-bottom) {
+section:not(.reduce-bottom):not(.reduce),
+.section:not(.reduce-bottom):not(.reduce) {
   padding-bottom: 30px;
 }
 section.secondary,

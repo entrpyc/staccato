@@ -2,9 +2,13 @@ import React from 'react'
 
 function Header() {
   return (
-    <section className="header">
+    <section className="header reduce">
       <div className="container">
-        header
+        <div className="wrapper flex">
+          <div className="menu-toggle flex center"></div>
+          <div className="info-box"></div>
+          <div className="user"></div>
+        </div>
       </div>
     </section>
   )
