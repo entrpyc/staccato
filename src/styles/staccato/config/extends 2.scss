@@ -1,0 +1,9 @@
+@use "../config/main" as *;
+
+$gd-breakpoints: (
+  "high-end": $screen-high-end,
+  "desktop": $screen-desktop,
+  "tablet": $screen-tablet,
+  "mobile": $screen-mobile,
+  "mini": $screen-mini,
+);

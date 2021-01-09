@@ -8,6 +8,65 @@
   @include sep($selector);
   @include z-index($selector);
   @include position($selector);
+  @include pointer-events($selector);
+  @include screen-reader($selector);
+  @include cursor;
+  @include image;
+}
+
+@mixin image {
+  img:not(.def) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@mixin screen-reader($selector) {
+  .sr-only#{$selector} {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .not-sr-only#{$selector} {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+@mixin pointer-events($selector) {
+  .pe-none#{$selector} {
+    pointer-events: none;
+  }
+
+  .pe-auto#{$selector} {
+    pointer-events: auto;
+  }
+}
+
+@mixin cursor {
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .cursor-default {
+    cursor: default;
+  }
+
+  .cursor-not-allowed {
+    cursor: not-allowed;
+  }
 }
 
 @mixin position($selector) {
