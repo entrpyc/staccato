@@ -13,6 +13,26 @@
   @include radius($selector);
   @include cursor;
   @include image;
+  @include text;
+}
+
+@mixin text {
+  .ls-none {
+    list-style: none;
+  }
+  
+  .td-none,
+  .td-none a {
+    text-decoration: none;
+  }
+  
+  .ta-center {
+    text-align: center;
+  }
+  
+  .i {
+    font-style: italic;
+  }
 }
 
 @mixin radius($selector) {
