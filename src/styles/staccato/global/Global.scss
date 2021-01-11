@@ -7,12 +7,12 @@
   }
 
   body {
-    //https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action#manipulation
+    //https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action#manipulation (remove the 300ms delay on touchStart [users can't zoom with double tap])
     touch-action: manipulation;
   }
   
   .main {
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering (this is for pixel perfect design)
     text-rendering: geometricPrecision;
     font-family: $font-fallback;
     line-height: $height-1;

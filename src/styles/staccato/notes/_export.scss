@@ -8,7 +8,6 @@ $init: '';
 
 @mixin export {
   @include FlexContainer.mount;
-  @include Atomic.mount;
   @include ColGrid.mount($init);
   @include FlexBox.mount($init);
   @include Helper.mount($init);

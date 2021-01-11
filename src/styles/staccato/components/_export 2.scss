@@ -1,7 +1,0 @@
-@use "./Carousel";
-@use "./Default";
-
-@mixin export {
-  @include Carousel.mount;
-  @include Default.mount;
-}

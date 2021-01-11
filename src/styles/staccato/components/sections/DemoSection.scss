@@ -1,0 +1,21 @@
+@use "../blocks/DemoBlock";
+
+@mixin mount {
+  @include demo-section;
+}
+
+$block-color: 'black';
+$block-radius: 50%;
+
+@mixin demo-section {
+  .demo-section {
+    opacity: 0.5;
+    @include DemoBlock.demo-block(
+      $block-color,
+      $block-radius
+    ) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

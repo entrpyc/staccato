@@ -16,7 +16,7 @@
       @include Helper.width(#{$selector});    
       @include Helper.max-width(#{$selector});    
       @include Helper.d-none(#{$selector});    
-      @include Helper.sep(#{$selector});    
+      @include Helper.sep(#{$selector});
     }
   }
 }

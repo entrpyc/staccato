@@ -1,0 +1,20 @@
+@mixin mount($color, $radius) {
+  @include demo-block(#{$color}, #{$radius})
+}
+
+@mixin demo-block($color, $radius) {
+  .block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius;
+
+    @if $color == 'black' {
+      background-color: black;
+    } @else {
+      background-color: white;
+    }
+
+    @content
+  }
+}
