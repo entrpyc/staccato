@@ -14,11 +14,8 @@ $screen-mini: 320px;
 $padding-sections: 30px;
 
 // ----- margin -----
-$margin-sep: 10px;
-$margin-gap-small: 10px;
-$margin-gap: 20px;
-$margin-gap-big: 35px;
-$margin-gap-xl: 50px;
+$margin-blocks: 30px;
+
 
 // ----- font-size -----
 $size-regular: 20px;
@@ -38,12 +35,11 @@ $font-secondary: 'Montserrat', sans-serif;
 $font-fallback: 'Open Sans', 'Montserrat', Calibri, Candara, Geneva, sans-serif;
 
 // ----- font color -----
-// $color-primary: $gray-1;
-// $color-secondary: $seagreen;
-// $color-hover: $secondary-color;
+$color-primary: $black;
+$color-secondary: $white;
+$color-hover: #f00;
 
 // ----- font weight -----
-
 $weight-2: 200;
 $weight-3: 300;
 $weight-4: 400;
@@ -61,6 +57,7 @@ $background-primary: $white;
 $background-secondary: $black;
 
 // ----- borders -----
+$border-regular: 1px solid $black;
 
 // ----- borders-radius -----
 $radius: 0;

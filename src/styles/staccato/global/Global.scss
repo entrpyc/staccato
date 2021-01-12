@@ -36,4 +36,9 @@
     font-size: $size-regular;
     line-height: $height-text;
   }
+
+  .harvest {
+    border: solid thin attr(data-tint px);
+    box-shadow: inset 0 0 50px attr(data-tint px);
+  }
 }

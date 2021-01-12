@@ -7,3 +7,7 @@
   
   @return $string;
 }
+
+@function suffix($string, $suffix) {
+  @return $string + $suffix;
+}
