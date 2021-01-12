@@ -1,4 +1,4 @@
-@use "../config/main" as *;
+@use "../config/main";
 @use "../config/flex-layout" as *;
 
 @mixin mount($selector) {
@@ -9,18 +9,12 @@
 
 @mixin flex-layouts {
   .layout {
-    // general configuration
-    --block-height: 200px; // minimum height
-
     // fixed block count configuration
     --block-count: 4;
-    @media (max-width: #{$screen-tablet}) {
+    @media (max-width: #{main.$screen-tablet}) {
     --block-count: 2; }
-    @media (max-width: #{$screen-mobile}) {
+    @media (max-width: #{main.$screen-mobile}) {
     --block-count: 1;}
-
-    // fluid block configuration
-    --block-width: 200px;
   }
 
   .layout {
@@ -51,7 +45,7 @@
 @mixin sidebar {
   &.-sidebar {
     .column.sidebar {
-      flex: 0 1 $sidebar-width + ($margin-gap-small * 2); 
+      flex: 0 1 $sidebar-width; 
     }
     .column {
       flex: 1 0 auto;
@@ -76,8 +70,8 @@
     &.fixate {
       .block {
         flex-shrink: 0;
-        flex-basis: clamp(var(--block-width), calc((100% / var(--block-count)) - calc(#{$block-margin} * 2)), 100%);
-        min-height: var(--block-height);
+        flex-basis: clamp(#{$block-width}, calc((100% / var(--block-count)) - calc(#{$block-margin} * 2)), 100%);
+        min-height: $block-height;
         margin: $block-margin;
 
         @content;
@@ -87,9 +81,9 @@
       flex-wrap: wrap;
 
       .block {
-        flex: 1 0 var(--block-width);
-        min-height: var(--block-height);
-        padding: $padding-block;
+        flex: 1 0 $block-width;
+        min-height: $block-height;
+        padding: $block-padding;
         margin: $block-margin;
 
         @content;

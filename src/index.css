@@ -696,9 +696,7 @@ section.secondary,
 }
 
 .layout {
-  --block-height: 200px;
   --block-count: 4;
-  --block-width: 200px;
 }
 @media (max-width: 1024px) {
   .layout {
@@ -720,7 +718,7 @@ section.secondary,
   margin: -10px;
 }
 .layout.-sidebar .column.sidebar {
-  flex: 0 1 220px;
+  flex: 0 1 200px;
 }
 .layout.-sidebar .column {
   flex: 1 0 auto;
@@ -739,8 +737,8 @@ section.secondary,
 }
 .layout.-listing.fixate .block {
   flex-shrink: 0;
-  flex-basis: clamp(var(--block-width), calc((100% / var(--block-count)) - calc(10px * 2)), 100%);
-  min-height: var(--block-height);
+  flex-basis: clamp(200px, calc((100% / var(--block-count)) - calc(10px * 2)), 100%);
+  min-height: 200px;
   margin: 10px;
   border-radius: 20px;
   background-color: rgba(255, 0, 150, 0.03);
@@ -750,8 +748,8 @@ section.secondary,
   flex-wrap: wrap;
 }
 .layout.-listing.fluid .block {
-  flex: 1 0 var(--block-width);
-  min-height: var(--block-height);
+  flex: 1 0 200px;
+  min-height: 200px;
   padding: 10px;
   margin: 10px;
   border-radius: 20px;
