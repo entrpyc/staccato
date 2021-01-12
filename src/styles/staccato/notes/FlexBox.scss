@@ -6,7 +6,7 @@
   @include flex-box(#{$selector});
   
   @if $selector == '' {
-    @include liquid-layout;
+    @include flex-layouts;
     @include flex-basis;
   }
 }
@@ -89,67 +89,81 @@
   }
 }
 
-@mixin liquid-layout {
-  .liquid {
+@mixin flex-layouts {
+  .layout {
+    // general configuration
+    --block-height: 200px; // minimum height
+
+    // fixed block count configuration
+    --block-count: 4;
+    @media (max-width: #{$screen-tablet}) {
+    --block-count: 2; }
+    @media (max-width: #{$screen-mobile}) {
+    --block-count: 1;}
+
+    // fluid block configuration
+    --block-width: 200px;
+  }
+
+  .layout {
     display: flex;
-    align-content: flex-start;
+    align-items: stretch;
+    justify-content: flex-start;
     margin: $margin-gap-small * -1;
 
-    &.-layout {
-      & > *:first-child {
-        flex: 0 1 $sidebar-width + ($margin-gap-small * 2); 
-      }
-      & > * + * {
-        flex: 1 0 auto;
-      }
-      & > * {
-        margin: $margin-gap-small;
-
-        padding: 10px;
-        border-radius: 20px;
-        background-color: rgba(255, 0, 150, 0.03);
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-      }
+    @include sidebar {
+      border-radius: 20px;
+      background-color: rgba(255, 0, 150, 0.03);
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
     }
 
-    &.-listing {
-      &.fixate {
-        --block-count: 3;
+    @include listing {
+      border-radius: 20px;
+      background-color: rgba(255, 0, 150, 0.03);
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
 
-        @media (max-width: #{$screen-tablet}) {
-          --block-count: 2;
-        }
+@mixin sidebar {
+  &.-sidebar {
+    & > *:first-child {
+      flex: 0 1 $sidebar-width + ($margin-gap-small * 2); 
+    }
+    & > * {
+      flex: 1 0 auto;
+      margin: $margin-gap-small;
+      padding: $padding-block;
 
-        @media (max-width: #{$screen-mobile}) {
-          --block-count: 1;
-        }
+      @content;
+    }
+  }
+}
 
-        flex-wrap: wrap;
+@mixin listing {
+  &.-listing {
+    &.fixate {
+      flex-wrap: wrap;
 
-        & > * {
-          flex-shrink: 0;
-          flex-basis: clamp(200px, calc((100% / var(--block-count)) - calc(#{$margin-gap-small} * 2)), 100%);
-          height: 200px;
-          padding: 10px;
-          border-radius: 20px;
-          background-color: rgba(255, 0, 150, 0.03);
-          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-          margin: $margin-gap-small;
-        }
+      & > * {
+        flex-shrink: 0;
+        flex-basis: clamp(var(--block-width), calc((100% / var(--block-count)) - calc(#{$margin-gap-small} * 2)), 100%);
+        min-height: var(--block-height);
+        margin: $margin-gap-small;
+
+        @content;
       }
-      &.fluid {
-        --block-width: 200px;
-        flex-wrap: wrap;
+    }
+    &.fluid {
+      flex-wrap: wrap;
 
-        & > * {
-          flex: 1 0 var(--block-width);
-          height: 200px;
-          padding: 10px;
-          border-radius: 20px;
-          background-color: rgba(255, 0, 150, 0.03);
-          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-          margin: $margin-gap-small;
-        }
+      & > * {
+        flex: 1 0 var(--block-width);
+        min-height: var(--block-height);
+        padding: $padding-block;
+        margin: $margin-gap-small;
+
+        @content;
       }
     }
   }
