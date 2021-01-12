@@ -6,7 +6,6 @@
   @include flex-box(#{$selector});
   
   @if $selector == '' {
-    @include flex-layouts;
     @include flex-basis;
   }
 }
@@ -85,86 +84,6 @@
   @each $selector, $basis-value in $flex-basis {
     .basis-#{$selector} {
       flex-basis: $basis-value;
-    }
-  }
-}
-
-@mixin flex-layouts {
-  .layout {
-    // general configuration
-    --block-height: 200px; // minimum height
-
-    // fixed block count configuration
-    --block-count: 4;
-    @media (max-width: #{$screen-tablet}) {
-    --block-count: 2; }
-    @media (max-width: #{$screen-mobile}) {
-    --block-count: 1;}
-
-    // fluid block configuration
-    --block-width: 200px;
-  }
-
-  .layout {
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-    margin: $margin-gap-small * -1;
-
-    @include sidebar {
-      border-radius: 20px;
-      background-color: rgba(255, 0, 150, 0.03);
-      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-    }
-
-    @include listing {
-      border-radius: 20px;
-      background-color: rgba(255, 0, 150, 0.03);
-      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-    }
-  }
-}
-
-@mixin sidebar {
-  &.-sidebar {
-    & > *:first-child {
-      flex: 0 1 $sidebar-width + ($margin-gap-small * 2); 
-    }
-    & > * {
-      flex: 1 0 auto;
-      margin: $margin-gap-small;
-      padding: $padding-block;
-
-      @content;
-    }
-  }
-}
-
-@mixin listing {
-  &.-listing {
-    &.fixate {
-      flex-wrap: wrap;
-
-      & > * {
-        flex-shrink: 0;
-        flex-basis: clamp(var(--block-width), calc((100% / var(--block-count)) - calc(#{$margin-gap-small} * 2)), 100%);
-        min-height: var(--block-height);
-        margin: $margin-gap-small;
-
-        @content;
-      }
-    }
-    &.fluid {
-      flex-wrap: wrap;
-
-      & > * {
-        flex: 1 0 var(--block-width);
-        min-height: var(--block-height);
-        padding: $padding-block;
-        margin: $margin-gap-small;
-
-        @content;
-      }
     }
   }
 }
