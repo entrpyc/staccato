@@ -1,0 +1,21 @@
+@use "../config/main";
+
+$column-margin: main.$margin-columns;
+$column-padding: main.$padding-block;
+
+$block-margin: main.$margin-columns;
+$block-padding: main.$padding-block;
+
+$block-height: 200px;
+
+// fixed block count configuration
+$block-count: 4;
+
+// fluid block configuration
+$block-width: 200px;
+
+// column sidebar
+$sidebar-width: main.$sidebar-width;
+
+// add selector names
+// add listing for different resolutions

@@ -1,4 +1,16 @@
+@use "../utility/functions" as *;
+@use "../config/flex-basis" as *;
+@use "../config/main" as *;
+
 @mixin mount($selector) {
+  @include flex-box(#{$selector});
+  
+  @if $selector == '' {
+    @include flex-basis;
+  }
+}
+
+@mixin flex-box($selector) {
   @if $selector == '' {
     .flex {
       display: flex;
@@ -51,9 +63,6 @@
     &.jc-stretch#{$selector} {
       justify-content: stretch;
     }
-    &.exist#{$selector} {
-      flex: 1;
-    }
     &.center#{$selector} {
       align-items: center;
       justify-content: center;
@@ -61,6 +70,20 @@
     &.split#{$selector} {
       align-items: center;
       justify-content: space-between;
+    }
+  }
+  .fill#{$selector} {
+    flex: 1;
+  }
+  .no-shrink#{$selector} {
+    flex-shrink: 0;
+  }
+}
+
+@mixin flex-basis {
+  @each $selector, $basis-value in $flex-basis {
+    .basis-#{$selector} {
+      flex-basis: $basis-value;
     }
   }
 }

@@ -6,6 +6,116 @@
   @include max-width($selector);
   @include d-none($selector);
   @include sep($selector);
+  @include z-index($selector);
+  @include position($selector);
+  @include pointer-events($selector);
+  @include screen-reader($selector);
+  @include radius($selector);
+  @include cursor;
+  @include image;
+  @include text;
+}
+
+@mixin text {
+  .ls-none {
+    list-style: none;
+  }
+  
+  .td-none,
+  .td-none a {
+    text-decoration: none;
+  }
+  
+  .ta-center {
+    text-align: center;
+  }
+  
+  .i {
+    font-style: italic;
+  }
+}
+
+@mixin radius($selector) {
+  .radius {
+    border-radius: $radius;
+  }
+}
+
+@mixin image {
+  img:not(.def) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@mixin screen-reader($selector) {
+  .sr-only#{$selector} {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .not-sr-only#{$selector} {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+@mixin pointer-events($selector) {
+  .pe-none#{$selector} {
+    pointer-events: none;
+  }
+
+  .pe-auto#{$selector} {
+    pointer-events: auto;
+  }
+}
+
+@mixin cursor {
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .cursor-default {
+    cursor: default;
+  }
+
+  .cursor-not-allowed {
+    cursor: not-allowed;
+  }
+}
+
+@mixin position($selector) {
+  .absolute#{$selector} {
+    position: absolute;
+  }
+
+  .relative#{$selector} {
+    position: relative;
+  }
+
+  .static#{$selector} {
+    position: static;
+  }
+
+  .fixed#{$selector} {
+    position: fixed;
+  }
+
+  .sticky#{$selector} {
+    position: sticky;
+  }
 }
 
 @mixin gap($selector) {
@@ -13,7 +123,7 @@
     margin-top: $margin-gap;    
   }
   .gap-small#{$selector} {
-    margin-top: $margin-1;
+    margin-top: $margin-gap-small;
   }
 
   .gap-large#{$selector} {
@@ -26,14 +136,41 @@
 }
 
 @mixin z-index($selector) {
-  .z-0 {
+  .z-0#{$selector} {
     z-index: 0;
   }
-  .z-0 {
-    z-index: 0;
+  .z-10#{$selector} {
+    z-index: 10;
   }
-  .z-0 {
-    z-index: 0;
+  .z-20#{$selector} {
+    z-index: 20;
+  }
+  .z-30#{$selector} {
+    z-index: 30;
+  }
+  .z-40#{$selector} {
+    z-index: 40;
+  }
+  .z-50#{$selector} {
+    z-index: 50;
+  }
+  .z-60#{$selector} {
+    z-index: 60;
+  }
+  .z-70#{$selector} {
+    z-index: 70;
+  }
+  .z-80#{$selector} {
+    z-index: 80;
+  }
+  .z-90#{$selector} {
+    z-index: 90;
+  }
+  .z-100#{$selector} {
+    z-index: 100;
+  }
+  .z-auto#{$selector} {
+    z-index: auto;
   }
 }
 
@@ -91,7 +228,7 @@
   .sep {
     & > *:last-child,
     & > * + * {
-      margin-left: $margin-1;
+      margin-left: $margin-sep;
     }
   }
 }

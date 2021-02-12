@@ -89,16 +89,6 @@
   @include fixed-height($height);
 }
 
-// pseudo(position: absolute, content: '')
-@mixin pseudo($position: absolute, $content: '', $position...) {
-  @include apply-props(($position, $content), position, content);
-}
-
-// font(font-weight, font-size, letter-spacing)
-@mixin font($args...) {
-  @include apply-props($args, font-weight, font-size, letter-spacing);
-}
-
 // whiteSpaceOverflow(white-space: nowrap, overflow: hidden, text-overflow: ellipsis)
 @mixin white-space-overflow($white-space: nowrap, $overflow: hidden, $text-overflow: ellipsis) {
   @include apply-props(($white-space, $overflow, $text-overflow), white-space, overflow, text-overflow);

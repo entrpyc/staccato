@@ -48,10 +48,10 @@
   section,
   .section {
     background-color: $background-primary;
-    &:not(.reduce-top) {
+    &:not(.reduce-top):not(.reduce) {
       padding-top: $padding-sections;
     }
-    &:not(.reduce-bottom) {
+    &:not(.reduce-bottom):not(.reduce) {
       padding-bottom: $padding-sections;
     }
 
@@ -60,7 +60,7 @@
     }
   }
 
-  .new-row {
+  .row {
     margin-left: -#{$container-padding};
     margin-right: -#{$container-padding};
   }

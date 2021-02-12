@@ -1,6 +1,6 @@
-@use "./Atomic";
 @use "./ColGrid";
 @use "./FlexBox";
+@use "./FlexLayout";
 @use "./FlexContainer";
 @use "./Helper";
 @use "./Extender";
@@ -9,9 +9,9 @@ $init: '';
 
 @mixin export {
   @include FlexContainer.mount;
-  @include Atomic.mount;
   @include ColGrid.mount($init);
   @include FlexBox.mount($init);
+  @include FlexLayout.mount($init);
   @include Helper.mount($init);
   @include Extender.mount;
 }
