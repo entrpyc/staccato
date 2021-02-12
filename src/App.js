@@ -7,7 +7,7 @@ import Header from "./components/Header"
 
 import { ROUTE } from "./helpers/Dictionary"
 
-import "./index.css"
+import "./styles/staccato/main.scss"
 
 function App() {
   return (
