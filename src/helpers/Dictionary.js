@@ -1,4 +1,4 @@
 export const ROUTE = {
   HOME: '/',
-  ADMIN: '/admin',
+  FluidLayout: '/fluid-layout',
 }

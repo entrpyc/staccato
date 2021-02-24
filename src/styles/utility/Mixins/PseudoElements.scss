@@ -9,7 +9,6 @@ $visited: 'visited';
 @mixin pseudo($type) {
   &::#{$type} {
     content: '';
-    position: absolute;
     
     @content;
   }
@@ -19,7 +18,6 @@ $visited: 'visited';
   &::#{$type} {
     content: '';
     position: absolute;
-
     @include cover;
     
     @content;
@@ -31,7 +29,6 @@ $visited: 'visited';
 
   &[#{$data-attr}]::#{$type} {
     content: attr(#{$data-attr});
-    position: absolute;
     
     @content;
   }
@@ -46,20 +43,4 @@ $visited: 'visited';
   right: 0;
   bottom: 0;
   left: 0;
-}
-
-@mixin propagate($attr, $prop) {
-  $data-attr: 'data-#{$attr}';
-
-  &[#{data-attr}] {
-    #{prop}: attr(#{$data-attr});
-    @content;
-  }
-}
-
-@mixin selector($type) {
-  &:#{$type} {
-    // the editor does not like this very much
-    @content;
-  }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Admin() {
+function FluidLayout() {
   return (
     <section className="home demo-section">
       <div className="container">
@@ -26,4 +26,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default FluidLayout

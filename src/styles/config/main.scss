@@ -34,7 +34,7 @@ $spacing-1: 1;
 $font-primary: 'Open Sans', sans-serif;
 $font-secondary: 'Montserrat', sans-serif;
 
-$font-fallback: 'Open Sans', 'Montserrat', Calibri, Candara, Geneva, sans-serif;
+$font-fallback: 'Open Sans', 'Montserrat', 'Calibri', 'Candara', 'Geneva', sans-serif;
 
 // ----- font color -----
 $color-primary: $black;
@@ -63,7 +63,6 @@ $border-regular: 1px solid $black;
 
 // ----- borders-radius -----
 $radius: 0;
-
 
 // ----- transitions -----
 $ease-quick: 0.15s all ease-in-out;

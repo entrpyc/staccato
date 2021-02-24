@@ -1,0 +1,12 @@
+@mixin button {
+  .button {
+    &-green {
+      color: green;
+    }
+    &-red {
+      color: red;
+    }
+    
+    @content;
+  }
+}

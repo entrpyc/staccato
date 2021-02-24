@@ -2,12 +2,12 @@ import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Admin from "./components/Admin"
+import FluidLayout from "./components/FluidLayout"
 import Header from "./components/Header"
 
 import { ROUTE } from "./helpers/Dictionary"
 
-import "./styles/staccato/main.scss"
+import "./styles/main.scss"
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Header />
       <Router>
           <Switch>
-            <Route exact path={ROUTE.ADMIN}><Admin /></Route>
+            <Route exact path={ROUTE.FluidLayout}><FluidLayout /></Route>
           </Switch>
       </Router>
     </div>

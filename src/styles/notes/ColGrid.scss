@@ -1,0 +1,75 @@
+@use "../config/grid" as *;
+
+@mixin mount($selector) {
+  @if $selector == '' {
+    .col-grid {
+      .sidebar {
+        flex: 0 0 $sidebar-width;
+        max-width: $sidebar-width;
+        padding-left: $sidebar-padding;
+        padding-right: $sidebar-padding;
+      }
+      .content {
+        flex: 0 0 calc(100% - #{$sidebar-width});
+        max-width: calc(100% - #{$sidebar-width});
+        padding-left: $container-padding;
+        padding-right: $container-padding;
+      }
+    }
+  }
+
+  .col-grid {
+    .side-padding#{$selector} {
+      padding-left: $col-padding;
+      padding-right: $col-padding;
+    }
+    .col {
+      &-1#{$selector}, &-2#{$selector},
+      &-3#{$selector}, &-4#{$selector},
+      &-5#{$selector}, &-6#{$selector} {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      &-1#{$selector} {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      &-2#{$selector} {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      &-3#{$selector} {
+        flex: 0 0 calc(100% / 3);
+        max-width: calc(100% / 3);
+    
+        &.rest {
+          flex: 0 0 calc(100% - (100% / 3));
+          max-width: calc(100% - (100% / 3));
+        }
+      }
+      &-4#{$selector} {
+        flex: 0 0 25%;
+        max-width: 25%;
+    
+        &.rest {
+          flex: 0 0 75%;
+          max-width: 75%;
+        }
+      }
+      &-5#{$selector} {
+        flex: 0 0 20%;
+        max-width: 20%;
+    
+        &.rest {
+          flex: 0 0 80%;
+          max-width: 80%;
+        }
+      }
+      &-6#{$selector} {
+        flex: 0 0 calc(100% - (100% / 6));
+        max-width: calc(100% - (100% / 6));
+        
+      }
+    }
+  }
+}
