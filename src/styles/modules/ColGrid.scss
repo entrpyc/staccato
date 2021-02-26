@@ -1,0 +1,139 @@
+@use "../_config/col-grid" as *;
+
+@mixin mount($selector) {
+  @if $selector == '' {
+    .col-grid {
+      display: flex;
+
+      &.stretch {
+        align-items: stretch;
+      }
+      
+      @include layouts;
+    }
+  }
+
+  .col-grid {
+    @include child-props($selector);
+
+    @include col($selector) {
+      padding-left: $col-side-padding;
+      padding-right: $col-side-padding;
+    }
+
+    @include col-sizes($selector);
+  }
+}
+
+@mixin col-sizes($selector) {
+  .col {
+    &-1#{$selector} {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    &-2#{$selector} {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    &-3#{$selector} {
+      flex: 0 0 calc(100% / 3);
+      max-width: calc(100% / 3);
+  
+      &.rest {
+        flex: 0 0 calc(100% - (100% / 3));
+        max-width: calc(100% - (100% / 3));
+      }
+    }
+    &-4#{$selector} {
+      flex: 0 0 25%;
+      max-width: 25%;
+  
+      &.rest {
+        flex: 0 0 75%;
+        max-width: 75%;
+      }
+    }
+    &-5#{$selector} {
+      flex: 0 0 20%;
+      max-width: 20%;
+  
+      &.rest {
+        flex: 0 0 80%;
+        max-width: 80%;
+      }
+    }
+    &-6#{$selector} {
+      flex: 0 0 calc(100% - (100% / 6));
+      max-width: calc(100% - (100% / 6));
+      
+    }
+  }
+}
+
+@mixin child-props($selector) {
+  &.col-props {
+    @include col($selector) {
+      display: flex;
+    }
+  }
+  &.col-flex-vertical {
+    @include col($selector) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &.col {
+    &-row-center {
+      @include col($selector) {
+        justify-content: center;
+      }
+    }
+    &-row-split {
+      @include col($selector) {
+        justify-content: space-between;
+      }
+    }
+    &-row-start {
+      @include col($selector) {
+        justify-content: flex-end;
+      }
+    }
+    &-row-end {
+      @include col($selector) {
+        justify-content: flex-end;
+      }
+    }
+    &-column-center {
+      @include col($selector) {
+        align-items: center;
+      }
+    }
+    &-column-stretch {
+      @include col($selector) {
+        align-items: stretch;
+      }
+    }
+    &-column-start {
+      @include col($selector) {
+        align-items: flex-start;
+      }
+    }
+    &-column-end {
+      @include col($selector) {
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
+@mixin col($selector) {
+  .col {
+    &-1#{$selector}, &-2#{$selector},
+    &-3#{$selector}, &-4#{$selector},
+    &-5#{$selector}, &-6#{$selector} {
+      @content;
+    }
+  }
+}
+
+@include mount('');
