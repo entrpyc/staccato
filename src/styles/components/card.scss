@@ -1,3 +1,5 @@
+@use "../utility/Mixins/Media.scss" as *;
+
 @mixin mount {
   .card {
     width: 250px;
@@ -6,6 +8,11 @@
     background-color: #000;
 
     @content;
+  }
+  .col-3 {
+    @include tablet-specific {
+      display: none;
+    }
   }
 }
 
