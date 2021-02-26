@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "../styles/modules/_export.scss"
+import "../styles/modules/ColGrid.scss"
 
 function FluidLayout() {
   return (
