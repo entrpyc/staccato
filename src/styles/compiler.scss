@@ -1,12 +1,12 @@
-@use "./global/export" as UserConfigurations; // { priority: 0 }
-@use "./notes/export" as UserLayers;  // { priority: 0 }
-@use "./components/export" as UserComponents;  // { priority: 0 }
+@use "./global/export" as UserConfigurations;
+@use "./modules/export" as UserLayers;
+@use "./components/export" as UserComponents;
 
-// Type:Configuration
+// Layer:Configuration
 @include UserConfigurations.export;
 
-// Type:Layer
+// Layer:Modules
 @include UserLayers.export;
 
-// Type:Component
+// Layer:User Components
 @include UserComponents.export;
