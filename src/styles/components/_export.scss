@@ -1,0 +1,9 @@
+@use "./card";
+
+$init: '';
+
+@mixin export {
+  @include card.mount;
+}
+
+@include export

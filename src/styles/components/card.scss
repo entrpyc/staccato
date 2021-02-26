@@ -1,0 +1,12 @@
+@mixin mount {
+  .card {
+    width: 250px;
+    height: 250px;
+    display: block;
+    background-color: #000;
+
+    @content;
+  }
+}
+
+@include mount;
