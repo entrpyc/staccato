@@ -1,7 +1,0 @@
-@use "./buttons.scss";
-
-@mixin export {
-  @include buttons.mount;
-}
-
-@include export;

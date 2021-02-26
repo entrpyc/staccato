@@ -1,7 +1,0 @@
-@use "./Reset";
-@use "./Global";
-
-@mixin export {
-  @include Reset.mount;
-  @include Global.mount;
-}
