@@ -1,4 +1,4 @@
-@use "../_config/main" as *;
+@use "../_config/global" as *;
 
 @mixin mount {
   @include boilerplate;

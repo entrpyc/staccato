@@ -20,12 +20,13 @@ $margin-blocks: 30px;
 
 
 // ----- font-size -----
-$size-regular: 20px;
+$size-regular: 16px;
 $size-title: 80px;
+$size-semi-title: 60px;
 
 // ----- line-height -----
 $height-1: 1.1;
-$height-text: 1.3;
+$height-regular: 1.3;
 
 // ----- letter-spacing -----
 $spacing-1: 1;
@@ -42,16 +43,11 @@ $color-secondary: $white;
 $color-hover: #f00;
 
 // ----- font weight -----
-$weight-2: 200;
-$weight-3: 300;
-$weight-4: 400;
-$weight-5: 500;
-$weight-6: 600;
-$weight-7: 700;
-$weight-8: 800;
-$weight-9: 900;
+$weight-regular: 400;
+$weight-title: 600;
 
 // ----- theme colors -----
+$color-primary: #333;
 $color-title: $black;
 
 // ----- background -----

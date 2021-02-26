@@ -1,0 +1,13 @@
+@use "./main";
+
+$font-fallback: main.$font-fallback;
+$height-regular: main.$height-regular;
+$weight-regular: main.$weight-regular;
+$size-regular: main.$size-regular;
+$color-primary: main.$color-primary;
+
+$font-title: main.$font-secondary;
+$color-title: main.$color-title;
+$weight-title: main.$weight-title;
+
+$size-semi-title: main.$size-semi-title;
