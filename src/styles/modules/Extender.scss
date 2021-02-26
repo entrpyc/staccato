@@ -3,7 +3,6 @@
 
 @use "./ColGrid";
 @use "./FlexBox";
-@use "./Helper";
 
 @mixin mount {
   @each $unformated_selector, $break-point in $gd-breakpoints {
@@ -12,11 +11,6 @@
     @media screen and(max-width: $break-point) {
       @include ColGrid.mount(#{$selector});
       @include FlexBox.mount(#{$selector});
-      @include Helper.gap(#{$selector});    
-      @include Helper.width(#{$selector});    
-      @include Helper.max-width(#{$selector});    
-      @include Helper.d-none(#{$selector});    
-      @include Helper.sep(#{$selector});
     }
   }
 }
