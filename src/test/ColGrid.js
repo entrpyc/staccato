@@ -1,8 +1,8 @@
 import React from 'react'
 
-import "../styles/modules/ColGrid.scss"
+import "../styles/modules/_export.scss"
 
-function FluidLayout() {
+function ColGrid() {
   return (
     <section className="home demo-section">
       <div className="container">
@@ -16,4 +16,4 @@ function FluidLayout() {
   )
 }
 
-export default FluidLayout
+export default ColGrid
