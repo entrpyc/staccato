@@ -19,6 +19,9 @@
 .env.production.local
 index.css.map
 .eslintcache
+/.eslintcache
+
+/src/App.js
 
 npm-debug.log*
 yarn-debug.log*

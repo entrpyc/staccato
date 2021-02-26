@@ -1,0 +1,21 @@
+$col-side-padding: 20px;
+$sidebar-width: 400px;
+
+@mixin layouts {
+  @include sidebar;
+}
+
+@mixin sidebar {
+  .sidebar {
+    flex: 0 0 $sidebar-width;
+    max-width: $sidebar-width;
+    padding-left: $col-side-padding;
+    padding-right: $col-side-padding;
+  }
+  .content {
+    flex: 0 0 calc(100% - #{$sidebar-width});
+    max-width: calc(100% - #{$sidebar-width});
+    padding-left: $col-side-padding;
+    padding-right: $col-side-padding;
+  }
+}
