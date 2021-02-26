@@ -7,8 +7,6 @@ import Header from "./components/Header"
 
 import { ROUTE } from "./helpers/Dictionary"
 
-import "./styles/main.scss"
-
 function App() {
   return (
     <div className="main relative">

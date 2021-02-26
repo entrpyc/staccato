@@ -1,13 +1,10 @@
-@use "../config/main" as *;
+@use "../_config/main" as *;
 
 @mixin mount {
   .container {
     max-width: $container;
     margin: 0 auto;
     padding: 0 $container-padding;
-    &.layout {
-      max-width: 1280px;
-    }
   }
 
   .container-split {

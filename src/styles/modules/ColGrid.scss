@@ -1,4 +1,4 @@
-@use "../config/grid" as *;
+@use "../_config/grid" as *;
 
 @mixin mount($selector) {
   @if $selector == '' {

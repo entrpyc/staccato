@@ -1,5 +1,5 @@
-@use "../config/main";
-@use "../config/flex-layout" as *;
+@use "../_config/main";
+@use "../_config/fluid-grid" as *;
 
 @mixin mount($selector) {
   @if $selector == '' {

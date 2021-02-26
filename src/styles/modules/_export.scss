@@ -1,17 +1,19 @@
 @use "./ColGrid";
 @use "./FlexBox";
-@use "./FlexLayout";
-@use "./FlexContainer";
+@use "./FluidGrid";
+@use "./FlexBoxGrid";
 @use "./Helper";
 @use "./Extender";
 
 $init: '';
 
 @mixin export {
-  @include FlexContainer.mount;
   @include ColGrid.mount($init);
   @include FlexBox.mount($init);
-  @include FlexLayout.mount($init);
+  @include FluidGrid.mount($init);
+  @include FlexBoxGrid.mount();
   @include Helper.mount($init);
   @include Extender.mount;
 }
+
+@include export

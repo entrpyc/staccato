@@ -1,4 +1,4 @@
-@use "../config/main" as *;
+@use "../_config/main" as *;
 
 @mixin mount($selector) {
   @include gap(#{$selector});

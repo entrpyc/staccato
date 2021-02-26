@@ -1,6 +1,6 @@
 @use "../utility/functions" as *;
-@use "../config/flex-basis" as *;
-@use "../config/main" as *;
+@use "../_config/flex-basis" as *;
+@use "../_config/main" as *;
 
 @mixin mount($selector) {
   @include flex-box(#{$selector});

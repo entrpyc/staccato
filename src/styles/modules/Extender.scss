@@ -1,5 +1,5 @@
-@use "../config/main" as *;
-@use "../config/extender" as *;
+@use "../_config/main" as *;
+@use "../_config/extender" as *;
 
 @use "./ColGrid";
 @use "./FlexBox";
