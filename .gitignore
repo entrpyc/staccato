@@ -21,21 +21,9 @@ index.css.map
 .eslintcache
 /.eslintcache
 
-/src/App.js
-
-/src/App.js
-
+src/App.js
 ./src/App.js
-
 /src/App.js
-
-/src/App.js
-/src/styles/modules
-/src/styles/components
-/src/styles/_config
-/src/styles/global
-/src/styles/compiler.scss
-/src/test
 
 npm-debug.log*
 yarn-debug.log*
