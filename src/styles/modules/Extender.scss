@@ -1,0 +1,17 @@
+@use "../_config/extender" as *;
+
+@use "./ColGrid";
+@use "./FlexBox";
+
+@mixin mount {
+  @each $unformated_selector, $break-point in $gd-breakpoints {
+    $selector: '-#{$unformated_selector}';
+    
+    @media screen and(max-width: $break-point) {
+      @include ColGrid.mount(#{$selector});
+      @include FlexBox.mount(#{$selector});
+    }
+  }
+}
+
+@include mount;
