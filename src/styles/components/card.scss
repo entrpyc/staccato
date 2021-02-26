@@ -9,11 +9,6 @@
 
     @content;
   }
-  .col-3 {
-    @include tablet-specific {
-      display: none;
-    }
-  }
 }
 
 @include mount;
