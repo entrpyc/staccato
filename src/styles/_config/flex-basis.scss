@@ -1,0 +1,7 @@
+$sidebar-basis: 300px;
+$product-basis: 150px;
+
+$flex-basis: (
+  "sidebar": $sidebar-basis,
+  "product": $product-basis,
+);
