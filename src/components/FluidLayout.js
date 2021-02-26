@@ -6,22 +6,10 @@ function FluidLayout() {
   return (
     <section className="home demo-section">
       <div className="container">
-        <div className="block layout -sidebar">
-          <div className="layout-wrap">
-            <div className="column sidebar d-none-mobile"></div>
-            <div className="column layout -listing fluid">
-              <div className="layout-wrap">
-                <div className="block"></div>  
-                <div className="block"></div>  
-                <div className="block"></div>  
-                <div className="block"></div>  
-                <div className="block"></div>  
-                <div className="block"></div>  
-                <div className="block"></div>  
-                <div className="block"></div>  
-              </div>
-            </div> 
-          </div>
+        <div className="col-grid">
+          <div className="col-3">asdas</div>
+          <div className="col-3">asdas</div>
+          <div className="col-3">asdas</div>
         </div>
       </div>
     </section>

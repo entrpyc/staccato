@@ -1,0 +1,22 @@
+@use "./_grid.scss" as *;
+
+$col-side-padding: 20px;
+
+@mixin layouts {
+  @include sidebar;
+}
+
+@mixin sidebar {
+  .sidebar {
+    flex: 0 0 $sidebar-width;
+    max-width: $sidebar-width;
+    padding-left: $sidebar-padding;
+    padding-right: $sidebar-padding;
+  }
+  .content {
+    flex: 0 0 calc(100% - #{$sidebar-width});
+    max-width: calc(100% - #{$sidebar-width});
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+  }
+}
