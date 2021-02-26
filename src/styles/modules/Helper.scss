@@ -233,8 +233,4 @@
   }
 }
 
-$staccato_object: (
-  compatible: (
-    'extender',
-  ),
-)
+@include mount('');
