@@ -4,14 +4,13 @@
 @forward './grid';
 
 // ----- breakpoints -----
-$screen-high-end: 1920px;
-$screen-desktop: 1440px;
+$screen-desktop: 1920px;
 $screen-tablet: 1024px;
 $screen-mobile: 768px;
-$screen-mini: 320px;
+$screen-minimal: 320px;
 
 // ----- padding -----
-$padding-sections: 30px;
+$padding-sections: 90px;
 $padding-block: 10px;
 
 // ----- margin -----

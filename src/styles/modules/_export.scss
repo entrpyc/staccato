@@ -2,11 +2,9 @@
 @use "./FlexBox";
 @use "./Extender";
 
-$init: '';
-
 @mixin export {
-  @include ColGrid.mount($init);
-  @include FlexBox.mount($init);
+  @include ColGrid.mount('');
+  @include FlexBox.mount('');
   @include Extender.mount;
 }
 
